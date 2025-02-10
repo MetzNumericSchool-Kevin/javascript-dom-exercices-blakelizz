@@ -41,3 +41,35 @@ call_archibald_element.addEventListener("click", function (event){
 
 // ---- Faisons un peu de magie 🪄 ----
 
+const bouton_change_element = document.querySelectorAll("#boites_magique .boite");
+
+//Changer le bg du premier carré -> ROUGE
+
+const change_rouge_element = document.querySelector("#btn_change_red");
+
+change_rouge_element.addEventListener("click", function (event){
+    bouton_change_element[0].style.backgroundColor = "red"; 
+});
+
+//Changer le bg des 2 premiers carré -> BLEU
+
+const change_bleu_element = document.querySelector("#btn_change_blue");
+
+change_bleu_element.addEventListener("click", function (event){
+    bouton_change_element[0].style.backgroundColor = "blue"; 
+    bouton_change_element[1].style.backgroundColor = "blue"; 
+});
+
+//Changer le bg de tous les carrés -> VERT
+
+const change_vert_element = document.querySelector("#btn_change_green");
+
+change_vert_element.addEventListener("click", function (event){
+    bouton_change_element.forEach(function(boite) {
+        boite.style.backgroundColor = "green";
+    });
+});
+
+
+// ---- Aventurier, voici ma boutique ! ----
+

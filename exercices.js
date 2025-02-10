@@ -73,3 +73,46 @@ change_vert_element.addEventListener("click", function (event){
 
 // ---- Aventurier, voici ma boutique ! ----
 
+
+// Liste de potions
+const potions = [
+    {
+      nom: "Potion de soin",
+      description: "Cette potion rouge vif a une odeur de fraise des bois. Un seul gorgée et vos blessures se referment comme par magie ! Effets secondaires possibles: cheveux roses pendant 24h.",
+      prix: 10,
+    },
+    {
+      nom: "Potion de sommeil",
+      description: "Un liquide bleu nuit qui sent la lavande et les rêves. Une goutte et vous dormirez comme un bébé dragon ! Attention: ne pas utiliser si vous devez combattre un troll dans les prochaines 8 heures.",
+      prix: 50,
+    },
+  ];
+
+const liste_potions_element = document.querySelector("#liste_potions");
+
+const template_potion_element = document.querySelector("#template_potion");
+
+
+potions.forEach(function(potions) {
+
+    // Cloner le contenue
+    const clone_template = template_potion_element.content.cloneNode(true);
+
+    //Ajouter le titre 
+    const h5_potion = clone_template.querySelector("h5");
+    h5_potion.textContent = potions.nom;
+
+    //Ajouter le prix 
+    const prix_potion =  clone_template.querySelector(".prix_potion");
+    prix_potion.textContent = potions.prix;
+
+    //Ajouter la description
+    const description_potion = clone_template.querySelector(".description_potion");
+    description_potion.textContent = potions.description;
+
+    //Afficher les résultats
+    liste_potions_element.appendChild(clone_template);
+});
+
+
+// ---- Plus de potions, nous avons besoin de plus de potions ! ----
